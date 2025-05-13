@@ -12,6 +12,8 @@ public class DSEList implements List {
 	private Node tail;
 
 	public DSEList() {
+		this.head = null;
+		this.tail = null;
 		
 	}
 	public DSEList(Node head_) {
