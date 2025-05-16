@@ -68,6 +68,16 @@ public class DSEList implements List {
 		// new Node next and prev is set to null as it's a new Node
 		Node n = new Node(null, null, obj);
 		
+		// A new node so head and tail reference to n
+		if (head == null) {
+			head = n;
+			tail = n;
+		}else { // If not empty
+			n.prev = tail; // This connects the new node to the end of the last node
+			tail.next = n; // Old last node connects to the new
+			tail = n; // updates tail pointer
+		}
+		return true;
 	}
 
 	//add String at parameter's index
