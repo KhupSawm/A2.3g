@@ -17,6 +17,12 @@ public class DSEList implements List {
 		
 	}
 	public DSEList(Node head_) {
+		// Starts from new node
+		head_.prev = null;
+		head_.next = null;
+		
+		this.head = head_;
+		this.tail = head_;
 	}
 	
 	//Takes a list then adds each element into a new list
