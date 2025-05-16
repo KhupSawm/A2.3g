@@ -74,7 +74,11 @@ public class DSEList implements List {
 		String space = "";
 		for (Node current = head; current != null; current = current.next) {
 			space += current.getString(); // Appends string to
+			if(current.next != null) {
+				space += " "; // Appends empty string (space) if next link is not null
+			}
 		}
+		return space;
 	}
 
 	//add the parameter String at of the end of the list
