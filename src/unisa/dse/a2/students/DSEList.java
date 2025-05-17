@@ -43,6 +43,18 @@ public class DSEList implements List {
 
 	//returns the index of the String parameter 
 	public int indexOf(String obj) {
+		// Index counter
+		int index = 0;
+		
+		// Treverse through list
+		// From current which is the head to each next link
+		for (Node current = head; current != null; current = current.next) {
+			if (obj.equals(current.getString())) { // using .equals to test if obj is equal to current
+				return index; // Return the index of where is it is
+			}
+			index ++;
+		}
+		return -1; // When obj is found end loops return -1
 	}
 	
 	//returns String at parameter's index
