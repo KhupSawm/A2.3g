@@ -63,7 +63,15 @@ public class DSEList implements List {
 		if (index < 0) {
 			return null;
 		}
-		
+		int ind = 0;
+		for (Node current = head; current != null; current = current.next) {
+			if (ind == index) { // If Traverse until ind matches index
+				return current.getString(); // return node's string
+			}
+			ind ++;
+		}
+		// If it doesnt exist in list and the loops end then return null
+		return null;
 	}
 
 	//checks if there is a list
