@@ -59,6 +59,11 @@ public class DSEList implements List {
 	
 	//returns String at parameter's index
 	public String get(int index) {
+		// Returns null if index not exist or negative
+		if (index < 0) {
+			return null;
+		}
+		
 	}
 
 	//checks if there is a list
