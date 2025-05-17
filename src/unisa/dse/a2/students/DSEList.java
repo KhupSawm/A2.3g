@@ -118,7 +118,12 @@ public class DSEList implements List {
 
 	@Override
 	public boolean equals(Object other) {
-		return true;
+		if (this == other) { // If same then true
+			return true;
+		}
+		if (!(other instanceof DSEList)) { // If not same type return false
+			return false;
+		}
 	}
 	
 }
