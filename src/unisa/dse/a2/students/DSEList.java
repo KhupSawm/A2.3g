@@ -50,6 +50,12 @@ public class DSEList implements List {
 		if (current == null) {
 			throw new IndexOutOfBoundsException("Index: " + index);
 		}
+		// Store the node’s string for the return
+		String FinalNode = current.getString();
+		
+		// If statement that will unlink the current
+		// Remove node's link
+		
 	}
 
 	//returns the index of the String parameter 
