@@ -38,7 +38,14 @@ public class DSEList implements List {
 
 	//remove the String at the parameter's index
 	public String remove(int index) {
-
+		// Traverse to given index with while loop
+		Node current = head;
+		int ind = 0;
+		
+		while (current != null && ind < index) {
+			current = current.next;
+			ind ++;
+		}
 	}
 
 	//returns the index of the String parameter 
