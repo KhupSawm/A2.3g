@@ -46,6 +46,10 @@ public class DSEList implements List {
 			current = current.next;
 			ind ++;
 		}
+		// If it's passed the end then throw exception
+		if (current == null) {
+			throw new IndexOutOfBoundsException("Index: " + index);
+		}
 	}
 
 	//returns the index of the String parameter 
