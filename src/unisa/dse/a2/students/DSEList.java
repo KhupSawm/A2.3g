@@ -153,6 +153,24 @@ public class DSEList implements List {
 
 	//add String at parameter's index
 	public boolean add(int index, String obj) {
+		// Allow index from 0 through size() inclusive
+		int ind = size();
+		if (index < 0 || index > ind) {
+			throw new IndexOutOfBoundsException("Index: " + index);
+		}
+		// Tail case delegates to append  
+	    if (index == ind) {
+	    	return add(obj);
+	    }
+	    // Head case 
+	    if (index == 0) {
+	    	Node newNode = new Node(null, null, obj);
+	    	newNode.next = head;
+	    	head.prev = newNode;
+	    	head = newNode;
+	    	
+	    	return true;
+	    }
 	}
 
 	//searches list for parameter's String return true if found
