@@ -55,7 +55,17 @@ public class DSEList implements List {
 		
 		// If statement that will unlink the current
 		// Remove node's link
-		
+		if (current.prev == null) {
+			head = current.next;
+		}else {
+			current.prev.next = current.next;
+		}
+		if (current.next == null) {
+			tail = current.prev;
+		}else {
+			current.next.prev = current.prev;
+		}
+		return FinalNode; // Return the removed string
 	}
 
 	//returns the index of the String parameter 
