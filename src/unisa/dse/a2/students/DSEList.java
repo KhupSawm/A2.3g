@@ -200,6 +200,13 @@ public class DSEList implements List {
 
 	//removes the parameter's String form the list
 	public boolean remove(String obj) {
+		// Re-use loop
+		// Locate the node that match the string obj
+		for (Node current = head; current != null; current = current.next) {
+			if (obj.equals(current.getString())) {
+				
+			}
+		}
 	}
 	
 	@Override
