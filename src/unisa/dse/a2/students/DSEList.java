@@ -204,7 +204,12 @@ public class DSEList implements List {
 		// Locate the node that match the string obj
 		for (Node current = head; current != null; current = current.next) {
 			if (obj.equals(current.getString())) {
-				
+				// unlink the current
+				if (current.prev == null) { // remove head
+					head = current.next;
+				}else {
+					current.prev.next = current.next;
+				}
 			}
 		}
 	}
