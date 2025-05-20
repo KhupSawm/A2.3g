@@ -171,6 +171,14 @@ public class DSEList implements List {
 	    	
 	    	return true;
 	    }
+	    // Create new node and insert in new node before the current node at the index
+	    Node newNode = new Node(null, null, obj);
+	    Node current = head;
+	    
+	    for (int i = 0; i < index; i++) {
+	    	current = current.next; // Move to the index
+	    }
+	    
 	}
 
 	//searches list for parameter's String return true if found
