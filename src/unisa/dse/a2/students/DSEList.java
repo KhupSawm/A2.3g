@@ -178,7 +178,12 @@ public class DSEList implements List {
 	    for (int i = 0; i < index; i++) {
 	    	current = current.next; // Move to the index
 	    }
-	    
+	    // insert and connect the newNode with between newNode prev and next
+	    newNode.prev = current.prev;
+	    newNode.next = current;
+	    current.prev.next = newNode;
+	    current.prev = newNode;
+	    return true;
 	}
 
 	//searches list for parameter's String return true if found
