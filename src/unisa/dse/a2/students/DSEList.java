@@ -188,6 +188,14 @@ public class DSEList implements List {
 
 	//searches list for parameter's String return true if found
 	public boolean contains(String obj) {
+		// Re-using the for loop 
+		// Move from head to each next link
+		for (Node current = head; current != null; current = current.next) {
+			if (obj.equals(current.getString())) { // for each node compare with stored string obj
+				return true; // Return true if match
+			}
+		}
+		return false; // Return false, once loop ends and no match found
 	}
 
 	//removes the parameter's String form the list
