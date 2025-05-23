@@ -234,6 +234,21 @@ public class DSEList implements List {
 		if (!(other instanceof DSEList)) { // If not same type return false
 			return false;
 		}
+		DSEList D_List = (DSEList)other;
+		// Traverse to list simultaniously
+		Node current_1 = this.head;
+		Node current_2 = D_List.head;
+		
+		while (current_1 != null && current_2 != null) {
+			// Comparing string at each node
+			if (current_1.getString().equals(current_2.getString())) {
+				return false;
+			}
+			current_1 = current_1.next;
+			current_2 = current_2.next;
+		}
+		// Validate and check that both list's are of same length
+		return current_1 == null && current_2 == null;
 	}
 	
 }
