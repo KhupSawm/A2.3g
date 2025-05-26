@@ -210,7 +210,25 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 	}
 
 	//removes the parameter's item form the list
-	public boolean remove(Object obj) {
+	public boolean remove(item obj) {
+		// Locate the node that match the string obj
+		for (NodeGeneric<item> current = head; current != null; current = current.next) {
+			if (obj.equals(current.get())) {
+				// unlink the current
+				if (current.prev == null) { // Remove head
+					head = current.next;
+				}else {
+					current.prev.next = current.next;
+				}
+				if (current.next == null) { // Remove tail
+					tail = current.prev;
+				}else {
+					current.next.prev = current.prev;
+				}
+				return true;
+			}
+		}
+		return false; // If fall out of the loop, no match was found then false
 	}
 	
 	@Override
