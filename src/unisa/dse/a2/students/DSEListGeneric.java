@@ -17,7 +17,17 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 		this.setTail(null);
 		
 	}
-	public DSEListGeneric(NodeGeneric head_) {
+	public DSEListGeneric(NodeGeneric<item> head_) {
+		// Null check
+		if (head == null) {
+			throw new NullPointerException("Cannot initialise with null Node");
+		}
+		// Same as DSEList
+		head_.prev = null;
+		head_.next = null;
+		
+		this.head = head_;
+		this.tail = head_;
 	}
 	
 	//Takes a list then adds each element into a new list
