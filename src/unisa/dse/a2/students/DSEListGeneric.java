@@ -42,15 +42,43 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 		
 		// Iterate from head to tails and copy every node until current .next is null
 		// This time replace Node with NodeGeneric and call current.get()
-		for (NodeGeneric current = other.head; current != null; current = current.next) {
+		for (NodeGeneric<item> current = other.head; current != null; current = current.next) {
 			this.add(current.get()); // Create new Node
 		}
 	}
 
 	//remove and return the item at the parameter's index
-	public void remove(int index) {
+	public item remove(int index) {
+		// Traverse to given index with while loop
+			NodeGeneric<item> current = head;
+			int ind = 0;
+			
+			while (current != null && ind < index) {
+				current = current.next;
+				ind ++;
+			}
+			// If it's passed the end then throw exception
+			if (current == null) {
+				throw new IndexOutOfBoundsException("Index: " + index);
+			}
+			// Store the node’s string for the return
+			item FinalNode = current.get();
+			
+			// If statement that will unlink the current
+			// Remove node's link
+			if (current.prev == null) {
+				head = current.next;
+			}else {
+				current.prev.next = current.next;
+			}
+			if (current.next == null) {
+				tail = current.prev;
+			}else {
+				current.next.prev = current.prev;
+			}
+			return FinalNode; // Return the removed string
+		}
 
-	}
 
 	//returns the index of the String parameter 
 	public int indexOf(String obj) {
