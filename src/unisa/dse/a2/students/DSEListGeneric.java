@@ -115,6 +115,8 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 
 	//checks if there is a list
 	public boolean isEmpty() {
+		// If head is null, then there are no nodes in the list so list is empty
+		return head == null;
 	}
 
 	//return the size of the list
