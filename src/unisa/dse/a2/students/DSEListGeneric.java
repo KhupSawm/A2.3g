@@ -97,7 +97,20 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 	}
 	
 	//returns item at parameter's index
-	public void get(int index) {
+	public item get(int index) {
+		// Returns null if index not exist or negative
+		if (index < 0) {
+			return null;
+		}
+		int ind = 0;
+		for (NodeGeneric<item> current = head; current != null; current = current.next) {
+			if (ind == index) { // If Traverse until ind matches index
+				return current.get(); // return node's string
+			}
+			ind ++;
+		}
+		// If it doesnt exist in list and the loops end then return null
+		return null;
 	}
 
 	//checks if there is a list
