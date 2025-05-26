@@ -238,7 +238,29 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 
 	@Override
 	public boolean equals(Object other) {
-		return true;
+		if (this == other) { // If same then true
+			return true;
+		}
+		// Type check (use wildcard to allow any type parameter)
+		if (!(other instanceof DSEListGeneric<?>)) { // If not same type return false
+			return false;
+		}
+		DSEListGeneric<?> D_List = (DSEListGeneric<?>)other;
+		// Traverse to list simultaniously
+		NodeGeneric<item> current_1 = this.head;
+		NodeGeneric<?> current_2 = D_List.head;
+		
+		while (current_1 != null && current_2 != null) {
+			// Comparing string at each node
+			if (current_1.get().equals(current_2.get())) {
+				return false;
+			}
+			current_1 = current_1.next;
+			current_2 = current_2.next;
+		}
+		// Validate and check that both list's are of same length
+		return current_1 == null && current_2 == null;
+	}
 	}
 	/**
 	 * @return the tail
