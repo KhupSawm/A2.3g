@@ -199,7 +199,14 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 	}
 
 	//searches list for parameter's String return true if found
-	public boolean contains(Object obj) {
+	public boolean contains(item obj) {
+		// Walk through the list and check each node’s value
+		for (NodeGeneric<item> current = head; current != null; current = current.next) {
+			if (obj.equals(current.get())) { // for each node compare with stored string obj
+				return true; // Return true if match
+			}
+		}
+		return false; // Return false, once loop ends and no match found
 	}
 
 	//removes the parameter's item form the list
