@@ -16,7 +16,8 @@ public class ListedCompany {
 	 */
 	private String code;
 	
-	public void getCode() {
+	public String getCode() {
+		return code;
 	}
 
 	/**
