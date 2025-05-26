@@ -31,7 +31,20 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 	}
 	
 	//Takes a list then adds each element into a new list
-	public DSEListGeneric(DSEList other) { // Copy constructor. 
+	public DSEListGeneric(DSEListGeneric<item> other) { // Copy constructor. 
+		// Null Check
+		if (other == null) {
+			throw new NullPointerException("Cannot initialise with null Node");
+		}
+		// Reuse Code
+		this.head = null;
+		this.tail = null;
+		
+		// Iterate from head to tails and copy every node until current .next is null
+		// This time replace Node with NodeGeneric and call current.get()
+		for (NodeGeneric current = other.head; current != null; current = current.next) {
+			this.add(current.get()); // Create new Node
+		}
 	}
 
 	//remove and return the item at the parameter's index
