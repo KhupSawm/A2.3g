@@ -6,12 +6,15 @@ import unisa.dse.a2.interfaces.ListGeneric;
  * @author simont
  *
  */
-public class DSEListGeneric implements ListGeneric {
+public class DSEListGeneric<item> implements ListGeneric<item> {
 	
-	public NodeGeneric head;
-	private NodeGeneric tail;
+	public NodeGeneric<item> head;
+	private NodeGeneric<item> tail;
 
 	public DSEListGeneric() {
+		// Empyty node
+		this.head = null;
+		this.setTail(null);
 		
 	}
 	public DSEListGeneric(NodeGeneric head_) {
@@ -71,6 +74,18 @@ public class DSEListGeneric implements ListGeneric {
 	@Override
 	public boolean equals(Object other) {
 		return true;
+	}
+	/**
+	 * @return the tail
+	 */
+	public NodeGeneric<item> getTail() {
+		return tail;
+	}
+	/**
+	 * @param tail the tail to set
+	 */
+	public void setTail(NodeGeneric<item> tail) {
+		this.tail = tail;
 	}
 	
 }
