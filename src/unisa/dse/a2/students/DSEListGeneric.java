@@ -146,7 +146,21 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 	}
 
 	//add the parameter item at of the end of the list
-	public boolean add(Object obj) {
+	public boolean add(item obj) {
+		// Creates new node
+		// new Node next and prev is set to null as it's a new Node
+		NodeGeneric<item> n = new NodeGeneric<item>(null, null, obj);
+		
+		// A new node so head and tail reference to n
+		if (head == null) {
+			head = n;
+			tail = n;
+		}else { // If not empty
+			n.prev = tail; // This connects the new node to the end of the last node
+			tail.next = n; // Old last node connects to the new
+			tail = n; // updates tail pointer
+		}
+		return true;
 	}
 
 	//add item at parameter's index
