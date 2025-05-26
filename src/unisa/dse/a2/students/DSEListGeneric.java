@@ -121,6 +121,15 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 
 	//return the size of the list
 	public int size() {
+		int count = 0;
+		
+		// Reuse for loop from copy constructor to iterate through list
+		// Head to next link until reach null
+		// Increment count each time node is visited then return count
+		for (NodeGeneric<item> current = head; current != null; current = current.next) {
+			count ++;
+		}
+		return count;
 	}
 	
 	//Take each element of the list a writes them to a string 
