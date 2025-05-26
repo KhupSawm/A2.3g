@@ -261,7 +261,6 @@ public class DSEListGeneric<item> implements ListGeneric<item> {
 		// Validate and check that both list's are of same length
 		return current_1 == null && current_2 == null;
 	}
-	}
 	/**
 	 * @return the tail
 	 */
