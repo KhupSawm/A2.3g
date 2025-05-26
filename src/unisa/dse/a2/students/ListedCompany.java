@@ -25,7 +25,8 @@ public class ListedCompany {
 	 */
 	private int currentPrice;
 	
-	public void getCurrentPrice() {
+	public int getCurrentPrice() {
+		return currentPrice;
 	}
 	
 	public ListedCompany(String code, String name, int currentPrice)
