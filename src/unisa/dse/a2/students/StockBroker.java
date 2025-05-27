@@ -44,6 +44,7 @@ public class StockBroker {
 	 * @return
 	 */
 	public String getName() {
+		return name;
 	}
 	
 	/**
