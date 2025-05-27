@@ -53,6 +53,7 @@ public class StockBroker {
 	 */
 	public StockBroker(String name)
 	{
+		this.name = name;
 	}
 	
 	/**
