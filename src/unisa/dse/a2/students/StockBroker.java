@@ -63,6 +63,12 @@ public class StockBroker {
 	 */
 	public boolean placeOrder(Trade order)
 	{
+		// Null check and verify if it already exist
+		if (order == null || pendingTrades.contains(order)) {
+			return false;
+		}
+		pendingTrades.add(order);
+		return true;
 	}
 	
 	/**
