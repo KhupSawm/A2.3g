@@ -77,6 +77,7 @@ public class StockBroker {
 	 */
 	public Trade getNextTrade()
 	{
+		return pendingTrades.poll();
 	}
 	
 	/**
