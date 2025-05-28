@@ -89,6 +89,11 @@ public class Trade implements Comparable<Trade> {
 	 */
 	public int compareTo(Trade t)
 	{
+		// Null check and throw exception
+		if (t == null) {
+			throw new NullPointerException("Cannot compare null");
+		}
+
 	}
 	
 
