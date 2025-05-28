@@ -97,7 +97,20 @@ public class Trade implements Comparable<Trade> {
 		boolean Trade_A = this.broker.getWatchlist().contains(this.listedCompanyCode);
 		boolean Trade_B = t.broker.getWatchlist().contains(t.listedCompanyCode);
 		
-
+		// If Both trade are on broker watchlist then equals return 0
+		if (Trade_A && Trade_B) {
+			return 0;
+		}
+		// If Trade_A in broker's watchlist then return 1
+		if (Trade_A) {
+			return 1;
+		}
+		// If Trade_B in broker's watchlist then return -1
+		if (Trade_B) {
+			return -1;
+		}
+		// Otherwise, neither on broker's list then comparing it by created timespam.
+		return Long.compare(this.created, t.created);
 	}
 	
 
