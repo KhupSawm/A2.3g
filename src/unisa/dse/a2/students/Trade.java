@@ -93,6 +93,10 @@ public class Trade implements Comparable<Trade> {
 		if (t == null) {
 			throw new NullPointerException("Cannot compare null");
 		}
+		// Trade_A current trade
+		boolean Trade_A = this.broker.getWatchlist().contains(this.listedCompanyCode);
+		boolean Trade_B = t.broker.getWatchlist().contains(t.listedCompanyCode);
+		
 
 	}
 	
