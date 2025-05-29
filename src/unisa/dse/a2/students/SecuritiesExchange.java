@@ -36,7 +36,10 @@ public class SecuritiesExchange {
 	 * @param name
 	 */
 	public SecuritiesExchange(String name)
-	{
+	{	// Name null check
+		if (name == null) {
+			throw new NullPointerException("Security Exchange name cannot be null");
+		}
 	}
 //	Implementing constructor: null-check name and initialize brokers, announcements, and companies collections
 
