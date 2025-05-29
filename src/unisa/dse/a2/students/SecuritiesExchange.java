@@ -13,7 +13,6 @@ public class SecuritiesExchange {
 	private String name;
 	
 	public String getName() {
-		return name;
 	}
 	
 	/**
@@ -41,8 +40,6 @@ public class SecuritiesExchange {
 			throw new NullPointerException("Security Exchange name cannot be null");
 		}
 	}
-//	Implementing constructor: null-check name and initialize brokers, announcements, and companies collections
-
 	
 	/**
 	 * Adds the given company to the list of listed companies on the exchange
@@ -52,8 +49,6 @@ public class SecuritiesExchange {
 	public boolean addCompany(ListedCompany company)
 	{
 	}
-//	Implement addCompany(): Checks if company is null and add to companies map
-
 
 	/**
 	 * Adds the given broke to the list of brokers on the exchange
@@ -62,8 +57,6 @@ public class SecuritiesExchange {
 	public boolean addBroker(StockBroker broker)
 	{
 	}
-//	Implementing addBroker: Null check if broker is null or existing broker, then add to brokers list
-
 	
 	/**
 	 * Process the next trade provided by each broker, processing brokers starting from index 0 through to the end
@@ -84,8 +77,6 @@ public class SecuritiesExchange {
 	public int processTradeRound()
 	{
 	}
-//	Implement processTradeRound(): process one trade per broker, update prices, and record announcements
-
 	
 	public int runCommandLineExchange(Scanner sc)
 	{
