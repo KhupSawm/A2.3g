@@ -40,6 +40,10 @@ public class SecuritiesExchange {
 		if (name == null) {
 			throw new NullPointerException("Security Exchange name cannot be null");
 		}
+		this.name = name;
+		this.brokers = new DSEListGeneric<StockBroker>();
+		this.announcements = new DSEListGeneric<String>();
+		this.companies = new HashMap<String, ListedCompany>();
 	}
 	
 	/**
