@@ -71,6 +71,8 @@ public class SecuritiesExchange {
 		if (broker == null || brokers.contains(broker)) {
 			return false;
 		}
+		brokers.add(broker);
+		return true;
 	}
 	
 	/**
