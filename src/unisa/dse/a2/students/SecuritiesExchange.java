@@ -56,6 +56,7 @@ public class SecuritiesExchange {
 		if (company == null || companies.containsKey(company.getCode())) {
 			return false;
 		}
+		// adds to companies maps
 		companies.put(company.getCode(), company);
 		return true;
 	}
@@ -66,6 +67,10 @@ public class SecuritiesExchange {
 	 */
 	public boolean addBroker(StockBroker broker)
 	{
+		// Check nulls and if it already exist
+		if (broker == null || brokers.contains(broker)) {
+			return false;
+		}
 	}
 	
 	/**
