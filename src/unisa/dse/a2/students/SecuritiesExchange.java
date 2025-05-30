@@ -93,10 +93,16 @@ public class SecuritiesExchange {
 	 */
 	public int processTradeRound()
 	{
+		int countProcess = 0;
+		
+		// Iterate through each broker, one at a time
+		for (int i = 0; i < brokers.size(); i ++) {
+			StockBroker broker = brokers.get(i);
+		}
 	}
 	
-	public int runCommandLineExchange(Scanner sc)
-	{
-		
-	}
+//	public int runCommandLineExchange(Scanner sc)
+//	{
+//		
+//	}
 }
