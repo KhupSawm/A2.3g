@@ -122,6 +122,12 @@ public class SecuritiesExchange {
 			// Adjust the price based on how many shares bought/sold
 			int sharesQuantity = trade.getShareQuantity();
 			company.processTrade(sharesQuantity);
+			
+			// Create a formal announcement of trade
+			String announcement = "Trade: " + sharesQuantity + " " + companyCode + '@' + CurrentPrice + "via" + broker.getName();
+			
+			// Stores the announcement
+			announcements.add(announcement);
 		}
 	}
 	
