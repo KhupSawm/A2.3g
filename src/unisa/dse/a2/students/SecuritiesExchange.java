@@ -121,6 +121,7 @@ public class SecuritiesExchange {
 			
 			// Adjust the price based on how many shares bought/sold
 			int sharesQuantity = trade.getShareQuantity();
+			company.processTrade(sharesQuantity);
 		}
 	}
 	
