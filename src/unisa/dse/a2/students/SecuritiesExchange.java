@@ -98,6 +98,14 @@ public class SecuritiesExchange {
 		// Iterate through each broker, one at a time
 		for (int i = 0; i < brokers.size(); i ++) {
 			StockBroker broker = brokers.get(i);
+			
+			// Gets the next trade is exist
+			Trade trade = broker.getNextTrade();
+			
+			// Skip broker with no trade and move on
+			if (trade == null) {
+				continue;
+			}
 		}
 	}
 	
