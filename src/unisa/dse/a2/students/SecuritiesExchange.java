@@ -115,6 +115,9 @@ public class SecuritiesExchange {
 			if (companyCode == null) {
 				throw new UntradedCompanyException(companyCode);
 			}
+			
+			// Stores current price in currentPrice
+			int CurrentPrice = company.getCurrentPrice();
 		}
 	}
 	
