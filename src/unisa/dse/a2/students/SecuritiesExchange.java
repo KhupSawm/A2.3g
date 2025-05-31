@@ -118,6 +118,9 @@ public class SecuritiesExchange {
 			
 			// Stores current price in currentPrice
 			int CurrentPrice = company.getCurrentPrice();
+			
+			// Adjust the price based on how many shares bought/sold
+			int sharesQuantity = trade.getShareQuantity();
 		}
 	}
 	
