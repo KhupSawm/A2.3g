@@ -124,11 +124,16 @@ public class SecuritiesExchange {
 			company.processTrade(sharesQuantity);
 			
 			// Create a formal announcement of trade
-			String announcement = "Trade: " + sharesQuantity + " " + companyCode + '@' + CurrentPrice + "via" + broker.getName();
+			String announcement = "Trade: " + sharesQuantity + " " + companyCode + " @ " + CurrentPrice + " via " + broker.getName();
 			
 			// Stores the announcement
 			announcements.add(announcement);
+			
+			// Increment the process or the successfull process
+			countProcess ++;
 		}
+		// Returns the number of process made to caller
+		return countProcess;
 	}
 	
 //	public int runCommandLineExchange(Scanner sc)
