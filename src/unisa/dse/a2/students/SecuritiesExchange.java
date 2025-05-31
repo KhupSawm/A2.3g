@@ -91,7 +91,7 @@ public class SecuritiesExchange {
 	 * @return The number of successful trades completed across all brokers
 	 * @throws UntradedCompanyException when traded company is not listed on this exchange
 	 */
-	public int processTradeRound()
+	public int processTradeRound() throws UntradedCompanyException
 	{
 		int countProcess = 0;
 		
@@ -105,6 +105,15 @@ public class SecuritiesExchange {
 			// Skip broker with no trade and move on
 			if (trade == null) {
 				continue;
+			}
+			
+			// Find company based of company code
+			// Throws exception if it doesn't exist
+			String companyCode = trade.getCompanyCode();
+			ListedCompany company = companies.get(companyCode);
+			
+			if (companyCode == null) {
+				throw new UntradedCompanyException(companyCode);
 			}
 		}
 	}
